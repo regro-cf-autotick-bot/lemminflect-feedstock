@@ -1,5 +1,5 @@
 {% set name = "lemminflect" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e0065aea1aec7ed36651186aa15567959aefcdf519ea3f6e9ac86e4c1daf3092
+  sha256: 5e125ab381b4156245a8c0b5bcdccb899950ead96546eb9735ea8641636a1af6
 
 build:
   number: 0
