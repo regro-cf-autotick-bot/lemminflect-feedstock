@@ -6,24 +6,26 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: e0065aea1aec7ed36651186aa15567959aefcdf519ea3f6e9ac86e4c1daf3092
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - numpy
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - {{ pin_compatible('numpy') }}
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - lemminflect
 
